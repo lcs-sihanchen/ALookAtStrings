@@ -14,6 +14,7 @@ let example = "The quick brown fox jumped over the lazy dog."
 
 // Iterate over each character in the string
 for singleCharacter in example {
+    singleCharacter
     // The output will show below in the Debug area
     print(singleCharacter)
 }
@@ -141,8 +142,10 @@ print("Second last character is: \(secondLast)")
  */
 // This will separate the output from the examples above from your work
 print("===== Exercise 1 begins =====")
-
-
+let name = "Sihan Chen"
+for singleCharacter in name {
+    print(singleCharacter)
+}
 
 /*:
 ### Exercise 2
@@ -157,7 +160,12 @@ print("===== Exercise 2 begins =====")
 
 // Create a string
 let aQuestion = "请问现在几点了?"
-
+index = aQuestion.index(aQuestion.startIndex, offsetBy: 3)
+let questionIndex = aQuestion[index]
+print(questionIndex)
+index = aQuestion.index(aQuestion.endIndex, offsetBy: -5)
+let questionIndex2 = aQuestion[index]
+print(questionIndex2)
 // Write code to complete the exercise below...
 
 /*:
@@ -177,5 +185,19 @@ Say that you wish to encrypt the word `pen` using a *rightward shift of three ch
 
 // Create the starting phrase
 let plainText = "pen"
-
+for scalar in plainText.unicodeScalars {
+    print(scalar)
+    let scalarValues = scalar.value
+    print(scalarValues)
+}
 // Encrypt the starting phrase
+func checkScalarValues(Integer: Int){
+    if let otherScalars = UnicodeScalar(Integer) {
+        let otherScalarsNew = String(otherScalars)
+        print(otherScalarsNew)
+    }
+}
+let encryptedFirstLetter = checkScalarValues(Integer: 112+3)
+let encryptedSecondLetter = checkScalarValues(Integer: 101+3)
+let encryptedThirdLetter = checkScalarValues(Integer: 110+3)
+print("Encrypted text is shq")
